@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+  <frames>
+    <frame id="128">      <!-- Motor_01 0x0080 -->
+    </frame>
+    <frame id="129">      <!-- Motor_02 0x0081 -->
+      <value name="DS1:Cyl Deactivate Status" units="bit" startbit="42" bitcount="1"></value> <!-- Not Working -->
+      <value name="DS1:Gear Position" startbit="49" bitcount="4" rangeMin="0" rangeMax="15"></value> <!-- Not Working -->
+    </frame>
+    <frame id="130">      <!-- Trans_01 0x0082 -->
+      <value name="DS1:Transmission Shifting" units="bit" startbit="12" bitcount="1"></value>
+      <value name="DS1:Clutch Engaged" startbit="13" bitcount="2" rangeMin="0" rangeMax="3"></value>
+    </frame>
+    <frame id="131">      <!-- Trans_02 0x0083 -->
+      <value name="DS1:Syncho Desired Speed" units="rpm" startbit="15" bitcount="9" rangeMin="25" rangeMax="12750" conversion="V*25"></value> <!-- Not Working -->
+      <value name="DS1:Syncho Shift Time" units="msec" startbit="24" bitcount="8" rangeMin="0" rangeMax="5080" conversion="V*20"></value>
+      <value name="DS1:Trans Increase Idle Speed" units="rpm" startbit="40" bitcount="8" rangeMin="0" rangeMax="2540" conversion="V*10"></value>
+      <value name="DS1:Trans Coast Active" units="bit" startbit="57" bitcount="1"></value>
+      <value name="DS1:Tach Damping Active" units="bit" startbit="58" bitcount="1"></value>
+      <value name="DS1:Fuel Cut Lower" units="bit" startbit="59" bitcount="1"></value> <!-- Not Working -->
+    </frame>
+    <frame id="132">      <!-- ESP_06 0x0084 -->
+      <value name="DS1:Partial Target Angle" units="deg" startbit="16" bitcount="11" rangeMin="0" rangeMax="204.7" conversion="V*0.1"></value>
+      <value name="DS1:Angular Engagement" startbit="28" bitcount="2" rangeMin="0" rangeMax="3"></value>
+    </frame>
+    <frame id="134">      <!-- LWI_01 0x0086 -->
+      <value name="DS1:Steering Wheel Angle" units="deg" startbit="16" bitcount="13" rangeMin="0" rangeMax="800" conversion="V*0.1"></value>
+      <value name="DS1:Steering Wheel Speed" startbit="31" bitcount="9" rangeMin="0" rangeMax="2500" conversion="V*5"></value>
+    </frame>
+    <frame id="256">      <!-- ESP_01 0x0100 -->
+      <value name="DS1:Vehicle Speed" units="km/h" startbit="32" bitcount="16" rangeMin="0" rangeMax="655.32" conversion="V*0.01"></value>
+    </frame>
+    <frame id="257">      <!-- ESP_02 0x0101 -->
+      <value name="DS1:Standstill Flag" units="bit" startbit="15" bitcount="1"></value>
+      <value name="DS1:Lateral Accel" startbit="16" bitcount="8" rangeMin="-1.27" rangeMax="1.27" conversion="V*0.01-1.27"></value>
+      <value name="DS1:Longitudinal Accel" startbit="24" bitcount="10" rangeMin="-16" rangeMax="15.90625" conversion="V*0.03125-16"></value>
+      <value name="DS1:Yaw Rate" startbit="40" bitcount="14" rangeMin="0" rangeMax="163.82" conversion="V*0.01"></value>
+    </frame>
+    <frame id="258">      <!-- Trans_03 0x0102 -->
+      <value name="DS1:Target Gear" startbit="24" bitcount="4" rangeMin="0" rangeMax="15"></value>
+      <value name="DS1:Selector Lever" startbit="44" bitcount="4" rangeMin="0" rangeMax="15"></value>
+      <value name="DS1:Trans Input Shaft Speed" startbit="48" bitcount="14" rangeMin="0" rangeMax="16381"></value>
+    </frame>
+    <frame id="259">      <!-- ESP_03 0x0103 -->
+      <value name="DS1:Wheel Speed Front Left" units="km/h" startbit="16" bitcount="12" rangeMin="0" rangeMax="409.2" conversion="V*0.1"></value>
+      <value name="DS1:Wheel Speed Front Right" units="km/h" startbit="28" bitcount="12" rangeMin="0" rangeMax="409.2" conversion="V*0.1"></value>
+      <value name="DS1:Wheel Speed Rear Left" units="km/h" startbit="40" bitcount="12" rangeMin="0" rangeMax="409.2" conversion="V*0.1"></value>
+      <value name="DS1:Wheel Speed Rear Right" units="km/h" startbit="52" bitcount="12" rangeMin="0" rangeMax="409.2" conversion="V*0.1"></value>
+    </frame>
+    <frame id="261">      <!-- Motor_03 0x0105-->
+      <value name="DS1:Engine RPM" units="rpm" startbit="16" bitcount="16" rangeMin="0" rangeMax="16383" conversion="V*0.25"></value>
+      <value name="DS1:Engine Idling" units="bit" startbit="32"></value>
+      <value name="DS1:Engine Running" units="bit" startbit="39"></value> <!-- Flips same as Engine Idling -->
+      <value name="DS1:Target Idle Speed" units="rpm" startbit="40" bitcount="8" rangeMin="0" rangeMax="2540" conversion="V*10"></value>
+      <value name="DS1:Pedal" units="%" startbit="48" bitcount="8" rangeMin="0" rangeMax="101.6" conversion="V*0.4"></value>
+    </frame>
+    <frame id="262">      <!-- ESP_05 0x0106 -->
+      <value name="DS1:Brake Pressure" units="bar" startbit="16" bitcount="10" rangeMin="-30" rangeMax="276.6" conversion="V*0.3-30"></value>
+      <value name="DS1:Reverse Detected" units="bit" startbit="39" bitcount="1"></value>
+      <value name="DS1:Traction Assist Status" units="bit" startbit="40" bitcount="1"></value>
+    </frame>
+    <frame id="263">      <!-- Motor_04 0x0107 -->
+      <value name="DS1:Oil Pressure" units="bar" startbit="16" bitcount="8" rangeMin="0" rangeMax="10" conversion="V*0.04"></value> <!-- Not Working -->
+      <value name="DS1:Efficiency Mode Active" units="bit" startbit="36" bitcount="1"></value>
+      <value name="DS1:Boost Pressure" units="bar" startbit="39" bitcount="9" rangeMin="0" rangeMax="5.1" conversion="V*0.01"></value>
+    </frame>
+    <frame id="273">      <!-- TSK_05 0x0111 -->
+      <value name="DS1:Vehicle Mass" units="kg" startbit="18" bitcount="5" rangeMin="500" rangeMax="6500" conversion="V*200+500"></value>
+      <value name="DS1:Vehicle Mass 2" units="kg" startbit="24" bitcount="8" rangeMin="0" rangeMax="8128" conversion="V*32"></value>
+    </frame>
+    <frame id="276">      <!-- Motor_10 0x0114 -->
+      <value name="DS1:Accel Pedal Gradient" startbit="16" bitcount="8" rangeMin="0" rangeMax="6350" conversion="V*25"></value>
+      <value name="DS1:Fuel Cut-Off" units="bit" startbit="24" bitcount="1"></value>
+      <value name="DS1:Brake Pedal Percent" units="%" startbit="40" bitcount="8" rangeMin="0" rangeMax="101.2" conversion="V*0.4-0.4"></value> <!-- Not Working -->
+    </frame>
+    <frame id="777">      <!-- BEM_01 0x0309 -->
+      <value name="DS1:Alternator Output" units="W" startbit="16" bitcount="8" rangeMin="0" rangeMax="12700" conversion="V*0.4-0.4"></value>
+    </frame>
+    <frame id="779">      <!-- Kombi_01 0x030b -->
+      <value name="DS1:ABS Lamp" units="bit" startbit="0" bitcount="1"></value>
+      <value name="DS1:ESP Lamp" units="bit" startbit="1" bitcount="1"></value>
+      <value name="DS1:BKL Lamp" units="bit" startbit="2" bitcount="1"></value>
+      <value name="DS1:Airbag Lamp" units="bit" startbit="3" bitcount="1"></value>
+      <value name="DS1:Display ACC Lamp" units="bit" startbit="12" bitcount="1"></value>
+      <value name="DS1:Oil Pressure Lamp" units="bit" startbit="15" bitcount="1"></value>
+      <value name="DS1:Tank Warning" units="bit" startbit="16" bitcount="1"></value>
+      <value name="DS1:USA Variant" units="bit" startbit="21" bitcount="1"></value>
+      <value name="DS1:Oil Pressure Warning" units="bit" startbit="22" bitcount="1"></value>
+      <value name="DS1:Parking Brake Lamp" units="bit" startbit="23" bitcount="1"></value>
+      <value name="DS1:Indicated Speed" units="km/h" startbit="48" bitcount="10" rangeMin="0" rangeMax="325.12" conversion="V*0.32"></value>
+    </frame>
+    <frame id="782">      <!-- Motor_05 0x030e -->
+      <value name="DS1:Air Path Active??" units="bit" startbit="34" bitcount="1"></value>
+    </frame>
+    <frame id="924">      <!-- Gateway_05 0x039c -->
+      <value name="DS1:BCM_02_alt??" units="bit" startbit="0" bitcount="1"></value>
+      <value name="Wiper_01_alt??" units="bit" startbit="1" bitcount="1"></value>
+      <value name="Climate_02_alt??" units="bit" startbit="2" bitcount="1"></value>
+      <value name="BCM1_01_alt??" units="bit" startbit="3" bitcount="1"></value>
+      <value name="ESP_07_alt??" units="bit" startbit="4" bitcount="1"></value>
+      <value name="TSG_BT_1_alt??" units="bit" startbit="5" bitcount="1"></value>
+      <value name="TSG_HL_1_alt??" units="bit" startbit="6" bitcount="1"></value>
+      <value name="TSG_HR_1_alt??" units="bit" startbit="7" bitcount="1"></value>
+      <value name="Motor_02_alt??" units="bit" startbit="8" bitcount="1"></value>
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <!-- <value name="" units="bit" startbit="" bitcount="1"></value> -->
+      <value name="DS1:FL Door Opened" units="bit" startbit="33" bitcount="1"></value>
+      <value name="DS1:Outside Temp" units="C" startbit="40" bitcount="8" rangeMin="-50" rangeMax="76" conversion="V*0.5-50"></value>
+      <value name="DS1:Oil Pressure Switch" units="bit" startbit="48" bitcount="1"></value>
+      <value name="DS1:FR Door Opened" units="bit" startbit="50" bitcount="1"></value>
+      <value name="DS1:RL Door Opened" units="bit" startbit="51" bitcount="1"></value>
+      <value name="DS1:RR Door Opened" units="bit" startbit="52" bitcount="1"></value>
+    </frame>
+    <frame id="959">      <!-- Climate_01 0x03bf -->
+      <value name="DS1:AC Compressor Load" startbit="24" bitcount="8" rangeMin="0" rangeMax="63.5" conversion="V*.25"></value>
+      <value name="DS1:Alternator Power Target" startbit="32" bitcount="8" rangeMin="0" rangeMax="2805" conversion="V*11"></value>
+      <value name="DS1:AC Switch" units="bit" startbit="49" bitcount="1"></value>
+      <value name="DS1:Thermal Management??" startbit="51" bitcount="2" rangeMin="0" rangeMax="3"></value>
+      <value name="DS1:AC Compressor Enable" units="bit" startbit="53" bitcount="1"></value>
+    </frame>
+    <frame id="1088">      <!-- Motor_06 0x0440 -->
+      <value name="DS1:Oil Min Warning" units="bit" startbit="13" bitcount="1"></value>
+      <value name="DS1:Oil Level Percent" units="%" startbit="16" bitcount="4" rangeMin="0" rangeMax="100" conversion="V*12.5"></value>
+      <value name="DS1:Not At Operating Temp" units="bit" startbit="25" bitcount="1"></value>
+      <value name="DS1:Oil Overfill Warning" units="bit" startbit="26" bitcount="1"></value>
+      <value name="DS1:Oil Amount" startbit="43" bitcount="5" rangeMin="0" rangeMax="3875" conversion="V*125"></value>
+      <value name="DS1:Oil Level Not Available" units="bit" startbit="53" bitcount="1"></value>
+      <value name="DS1:Fuel Refill Indicator" units="bit" startbit="54" bitcount="1"></value>
+      <value name="DS1:Overfill Deactivated" units="bit" startbit="55" bitcount="1"></value>
+      <value name="DS1:Underfill Warning" units="bit" startbit="56" bitcount="1"></value>
+      <value name="DS1:Fuel Cap Lamp" units="bit" startbit="57" bitcount="1"></value>
+      <value name="DS1:Fuel Cap Warning" units="bit" startbit="58" bitcount="1"></value>
+    </frame>
+    <frame id="1089">      <!-- Trans_04 0x0441 -->
+      <value name="DS1:Trans Heating Request" startbit="8" bitcount="2" rangeMin="0" rangeMax="3"></value>
+      <value name="DS1:Trans Shut-off Valve??" startbit="12" bitcount="4" rangeMin="0" rangeMax="15"></value>
+      <value name="DS1:Trans Limit Creep Torque" startbit="16" bitcount="6" rangeMin="0" rangeMax="122"  conversion="V*2"></value>
+      <value name="DS1:Launch Control Active" units="bit" startbit="40" bitcount="1"></value>
+      <value name="DS1:Trans Sump Temp" units="C" startbit="56" bitcount="8" rangeMin="-58" rangeMax="196"  conversion="V*1.0-58"></value>
+    </frame>
+    <frame id="1172">      <!-- STS_01 0x0494 -->
+      <value name="DS1:Parking Light" units="bit" startbit="24" bitcount="1"></value>
+    </frame>
+    <frame id="1600">      <!-- Motor_07 0x0640 -->
+      <value name="DS1:Trans Heating Active" units="bit" startbit="5" bitcount="1"></value>
+      <value name="DS1:Air Intake Temp" units="C" startbit="8" bitcount="8" rangeMin="-48" rangeMax="141.75" conversion="V*0.75-48"></value>
+      <value name="DS1:Oil Temp" units="C" startbit="16" bitcount="8" rangeMin="-60" rangeMax="192" conversion="V*1.0-60"></value>
+      <value name="DS1:Coolant Temp" units="C" startbit="24" bitcount="8" rangeMin="-48" rangeMax="141.75" conversion="V*0.75-48"></value>
+      <value name="DS1:Trans Cooling" units="bit" startbit="47" bitcount="1"></value>
+      <value name="DS1:Heating Pump Percent" units="%" startbit="53" bitcount="4" rangeMin="0" rangeMax="100" conversion="V*10"></value>
+    </frame>
+    <frame id="1604">      <!-- Gateway_11 0x0644 -->
+      <value name="DS1:Turn Signal Left" units="bit" startbit="16" bitcount="1"></value>
+      <value name="DS1:Turn Signal Right" units="bit" startbit="17" bitcount="1"></value>
+      <value name="DS1:High Beam Active" units="bit" startbit="19" bitcount="1"></value>
+      <value name="DS1:Flashers??" units="bit" startbit="20" bitcount="1"></value>
+      <value name="DS1:Low Beam Active" units="bit" startbit="27" bitcount="1"></value>
+      <value name="DS1:Light Darkness Active??" units="bit" startbit="29" bitcount="1"></value>
+      <value name="DS1:Rear Fog Light" units="bit" startbit="30" bitcount="1"></value>
+      <value name="DS1:Left-hand Traffic??" units="bit" startbit="31" bitcount="1"></value>
+      <value name="DS1:P Locked??" units="bit" startbit="32" bitcount="1"></value>
+      <value name="DS1:All-Weather Light??" units="bit" startbit="36" bitcount="1"></value>
+    </frame>
+    <frame id="1607">      <!-- Motor_09 0x0647 -->
+      <value name="DS1:Estimated Range" units="km" startbit="16" bitcount="15" rangeMin="0" rangeMax="32766"></value>
+      <value name="DS1:Fuel Filter Water Present" units="bit" startbit="40" bitcount="1"></value>
+    </frame>
+    <frame id="1636">      <!-- Climate_02 0x0664 -->
+    </frame>
+    <frame id="1646">      <!-- Climate_03 0x066e -->
+    </frame>
+    <frame id="1648">      <!-- Motor_18 0x0670 -->
+    </frame>
+    <frame id="1714">      <!-- Diagnose_01 0x06b2 -->
+      <value name="DS1:Odometer" units="km" startbit="8" bitcount="20" rangeMin="0" rangeMax="1048573"></value>
+    </frame>
+    <frame id="1719">      <!-- Kombi_02 0x06b7 -->
+    </frame>
+    <frame id="1720">      <!-- Kombi_03 0x06b8 -->
+    </frame>
+    <frame id="2026">      <!-- 1st Webpage CAN frame, MAP, IAT, LPF, HPF, LAM, KNK, WGD, RPM -->
+      <value name="DS1:Manifold Absolute Pressure" units="bar" offset="0" length="1" rangeMin="0" rangeMax="4" conversion="V*0.016"></value>
+      <!-- <value name="DS1:Intake Air Temperature" units="C" offset="1" length="1" rangeMin="-40" rangeMax="55" conversion="V*0.75-48"></value> -->
+      <value name="DS1:Low Fuel Pressure" units="bar" offset="2" length="1" rangeMin="0" rangeMax="10" conversion="V*0.032"></value>
+      <value name="DS1:High Fuel Pressure" units="MPa" offset="3" length="1" rangeMin="0" rangeMax="30" conversion="V*0.128"></value>
+      <value name="DS1:Lambda Actual" units="Lambda" offset="4" length="1" rangeMin="0.5" rangeMax="1.5" conversion="V/128"></value>
+      <value name="DS1:Knock Average" units="deg" offset="5" length="1" rangeMin="0" rangeMax="-10" conversion="V*-0.75"></value>
+      <value name="DS1:Wastegate Duty Cycle" units="%" offset="6" length="1" rangeMin="0" rangeMax="100" conversion="V/2.55"></value>
+      <!-- <value name="DS1:Engine Speed" units="RPM" offset="7" length="1" rangeMin="0" rangeMax="8000" conversion="V*32"></value> -->
+    </frame>
+    <frame id="2027">      <!-- 2nd Webpage CAN frame, MPS, ATM, TGT, IGN, IJD, IFP, LOD, EET -->
+      <value name="DS1: Current Map Switch" offset="0" length="1" rangeMin="0" rangeMax="9"></value>
+      <value name="DS1: Atmospheric Pressure" units="bar" offset="1" length="1" rangeMin="0" rangeMax="1" conversion="V*0.01"></value>
+      <value name="DS1: Pre-Throttle Pressure Target" units="bar" offset="2" length="1" rangeMin="0" rangeMax="4" conversion="V*0.016"></value>
+      <value name="DS1: Ignition Advance" units="deg" offset="3" length="1" rangeMin="-50" rangeMax="50" conversion="V*0.75" signed="true"></value>
+      <value name="DS1: Direct Injector Pulsewidth" units="ms" offset="4" length="1" rangeMin="0" rangeMax="20" conversion="V*0.256"></value>
+      <value name="DS1: Port Injector Pulsewidth" units="ms" offset="5" length="1" rangeMin="0" rangeMax="30" conversion="V*0.256"></value>
+      <value name="DS1: Relative Engine Load" units="%" offset="6" length="1" rangeMin="0" rangeMax="300" conversion="V*1.5"></value>
+      <value name="DS1: Ethanol Content" units="%" offset="7" length="1" rangeMin="0" rangeMax="100" conversion="V*0.4"></value>
+    </frame>
+    <frame id="2028">      <!-- 3rd Webpage CAN frame, GOL, AMT, CCS, LAT, LON, GEA, PED, THR -->
+      <value name="DS1: Trans Gear Oil Temp" units="C" offset="0" length="1" rangeMin="0" rangeMax="150"></value>
+      <value name="DS1: Ambient Temperature" units="C" offset="1" length="1" rangeMin="-40" rangeMax="55" conversion="V*0.75-48"></value>
+      <value name="DS1: Cruise Control Switch" offset="2" length="1" rangeMin="" rangeMax=""></value>
+      <value name="DS1: Lateral G Force" offset="3" length="1" rangeMin="-2" rangeMax="2" conversion="V*0.02" signed="true"></value>
+      <value name="DS1: Longitudinal G Force" offset="4" length="1" rangeMin="-2" rangeMax="2" conversion="V*0.0261" signed="true"></value>
+      <value name="DS1: Transmission Gear" offset="5" length="1" signed="true"></value>
+      <!-- <value name="DS1: Pedal" units="%" offset="6" length="1" rangeMin="0" rangeMax="100" conversion="V*0.392"></value> -->
+      <value name="DS1: Throttle" units="%" offset="7" length="1" rangeMin="0" rangeMax="100" conversion="V/2.55"></value>
+    </frame>
+  </frames>
+</RealDashCAN>
