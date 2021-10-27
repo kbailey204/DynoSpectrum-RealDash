@@ -19,5 +19,7 @@ DS1 software:
 A device capable of running RealDash (Android, IOS, and Windows 10).
 
 # Installation
+Installation of the RealDash software should be faily straightforward. Any issues should be directed here: [RealDash Forums](https://www.realdash.net/forum/)
 
-Installation of the RealDash software is straightforward. Any issues should be directed here: [RealDash Forums](https://www.realdash.net/forum/)
+# Configuration
+The decoding of raw CAN data is possible due to the [RealDash CAN protocol](https://github.com/janimm/RealDash-extras/blob/master/RealDash-CAN/realdash-can-protocol.md). Writing of the XML file used is based on DBC files that define the data structure, information, and conversion math involved for extracting CAN data into readable information.
